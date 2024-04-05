@@ -5,6 +5,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -66,6 +68,46 @@ public class MainActivity extends AppCompatActivity {
             //updates information on the current View
             refreshDisplay();
 
+            mSubmitButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //creates a new log once the user enters inputs and clicks submit button
+                    GymLog log = getValuesFromDisplay();
+                    //inserts the log into the database
+                    mGymLogDAO.insert(log);
+                    refreshDisplay();
+                }
+            });
+
+    }
+
+    /** getValuesFromDisplay
+     * creates a log record based on text inputted by the user for all 3 EditText fields
+     * @return the newly created log
+     */
+    private GymLog getValuesFromDisplay(){
+        String exercise = "No record found";
+        double weight = 0.0;
+        int reps = 0 ;
+
+        exercise = mExercise.getText().toString();
+
+        try{
+            weight = Double.parseDouble(mWeight.getText().toString());
+        }catch(NumberFormatException e){
+            Log.d("GYMLOG", "Couldn't convert weight");
+        }
+
+        try{
+            reps = Integer.parseInt(mReps.getText().toString());
+        }catch(NumberFormatException e){
+            Log.d("GYMLOG", "Couldn't convert reps");
+        }
+
+        //creates a log based on the user inputs
+        GymLog log = new GymLog(exercise, reps, weight);
+
+        return log;
     }
 
     /** refreshDisplay
@@ -87,4 +129,5 @@ public class MainActivity extends AppCompatActivity {
         }
         mMainDisplay.setText(sb.toString());
     }
+
 }

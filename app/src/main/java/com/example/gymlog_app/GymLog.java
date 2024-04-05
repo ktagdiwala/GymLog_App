@@ -38,43 +38,43 @@ public class GymLog {
         mDate = new Date();
     }
 
-    public int getmLogId() {
+    public int getLogId() {
         return mLogId;
     }
 
-    public void setmLogId(int mLogId) {
+    public void setLogId(int mLogId) {
         this.mLogId = mLogId;
     }
 
-    public String getmExercise() {
+    public String getExercise() {
         return mExercise;
     }
 
-    public void setmExercise(String mExercise) {
+    public void setExercise(String mExercise) {
         this.mExercise = mExercise;
     }
 
-    public int getmReps() {
+    public int getReps() {
         return mReps;
     }
 
-    public void setmReps(int mReps) {
+    public void setReps(int mReps) {
         this.mReps = mReps;
     }
 
-    public double getmWeight() {
+    public double getWeight() {
         return mWeight;
     }
 
-    public void setmWeight(double mWeight) {
+    public void setWeight(double mWeight) {
         this.mWeight = mWeight;
     }
 
-    public Date getmDate() {
+    public Date getDate() {
         return mDate;
     }
 
-    public void setmDate(Date mDate) {
+    public void setDate(Date mDate) {
         this.mDate = mDate;
     }
 }
