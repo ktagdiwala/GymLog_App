@@ -5,6 +5,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         //UI Elements are "wired-up"
         mMainDisplay = findViewById(R.id.mainGymLogDisplay);
+        mMainDisplay.setMovementMethod(new ScrollingMovementMethod());
+
         mExercise = findViewById(R.id.mainExerciseEditText);
         mWeight = findViewById(R.id.mainWeightEditText);
         mReps = findViewById(R.id.mainRepsEditText);

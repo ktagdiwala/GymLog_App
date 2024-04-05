@@ -26,9 +26,9 @@ public interface GymLogDAO {
 
     /** getGymLogs
      * Allows selection of everything from Gymlog table
-     * @return a list of gymlog objects from the table
+     * @return a list of gymlog objects from the table in descending order by date
      */
-    @Query("SELECT * FROM " + AppDatabase.GYMLOG_TABLE)
+    @Query("SELECT * FROM " + AppDatabase.GYMLOG_TABLE + " ORDER BY mDate DESC")
     List<GymLog> getGymLogs();
 
     /** getGymLogsById

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/mainGymLogDisplay"
         android:layout_width="373dp"
-        android:layout_height="217dp"
+        android:layout_height="370dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"

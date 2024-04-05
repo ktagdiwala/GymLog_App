@@ -77,4 +77,13 @@ public class GymLog {
     public void setDate(Date mDate) {
         this.mDate = mDate;
     }
+
+    @Override
+    public String toString() {
+        String output;
+
+        output = mExercise + "\n" + mWeight + " : " + mReps + "\n" + getDate();
+
+        return output;
+    }
 }
